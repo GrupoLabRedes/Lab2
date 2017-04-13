@@ -1,1 +1,119 @@
+\documentclass{udpreport}
+\title{Topología Física y Lógica de una red LAN}
+\author{Integrantes: Francisca Carrrasco, Ignacio López.}
+\date{Abril de 2017}
+\usepackage{graphicx}
+\graphicspath{ {Imagenes/} }
+\udpschool{Escuela de Informática y Telecomunicaciones}
 
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Actividades}
+	\section{Identificación de elementos de red}
+		Lo primero que se procede a identificar es el computador, ya que este es el que estaba más cercano, para eso se observa  		el costado izquierdo de la CPU el cual tiene el número de serie del computador y el modelo. Después se procede a identificar 		el cable de conexión a red,  ya que este era solo mirar la parte trasera del computador y ahí se encuentra, al ver el cable 		a lo largo se identifica que es un cable Fastlink categoría 5e UTP. Después se identifica el switch y el patch panel, los 		cuales se encuentran en la esquina superior derecha del laboratorio, en estos equipos estaba impresa su marca y modelo 		los cuales eran cisco series 2960 y Siemon hd-5e respectivamente.\\
+		A continuación se mostraran las características y especificaciones técnicas de los equipos mencionados en el párrafo 			anterior\\
+\begin{itemize}
+		\item{\bf-Tipo:} Computador de escritorio\\
+		\item{\bf-Modelo:}  HP EliteDesk 800 G1 con factor de forma reducido (ENERGY STAR)
+		(K6P73LT)\\\\\\\\
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=7cm, height=4.3cm]{blocitito.jpg}
+		\end{figure}
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=7cm, height=4cm]{blocito.jpg}
+		\end{figure}
+		\item{\bf-Especificaciones:}
+		\begin{itemize}
+			\item Procesador:Intel® Core™ i7-4790 con gráficos Intel HD 4600 (3,6 GHz, 8 MB de caché, 4 núcleos)\\
+			\item Memoria, estándar:SDRAM DDR3 de 8 GB y 1600 MHz (1 x 8 GB)\\
+			\item Unidad interna:SATA de 1 TB y 7200 rpm\\
+			\item Unidad óptica:Grabadora SATA de DVD SuperMulti delgada\\
+			\item Gráficos:Gráficos Intel HD 4600\\
+			\item Interfaz de red:Conexión de red Intel I217LM GbE integrada\\
+		\end{itemize}
+		\item{\bf-Tipo:} Switch\\
+		\item{\bf-Modelo:} Cisco Catalyst 2960-24TT-L Switch\\
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=\textwidth]{switch.PNG}
+		\end{figure}
+		\item{\bf-Especificaciones:}
+		\begin{itemize}
+			\item Compatibilidad:Modulo convertidor TwinGig\\
+			\item Fecha de salida:18 de Septiembre de 2005\\
+			\item Dimensiones:4.4 x 44.5 x 23.6 cm\\
+			\item Paquetes por segundo(Mpps):6.6\\
+			\item Watt Power Consumption:75\\
+			\item AC/DC Support:AC only\\ \\ \\ \\ \\ \\
+		\end{itemize}
+		\item{\bf-Tipo:}Cable de conexion a red\\
+		\item{\bf-Modelo:}Fastlink 5e\\
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=10cm, height=6cm]{nomaspotos.png}
+		\end{figure}\\
+		\item{\bf-Especificaciones:}
+		\begin{itemize}
+			\item Cubierta y pares sin apantallar.\\
+			\item Excede los requerimientos propuestos por la normativa TIA /EIA 568 B .2 ,ISO/IEC 11801 Categoría 5E.\\
+			\item Retardante a la llama y cero halógenos según el Standard IEC 60332-3 Cat C.\\
+			\item Soporta aplicaciones de hasta 125 MHz de ancho de banda.\\
+			\item Codificación de colores para cada uno de los pares\\
+			\item Distribuido en cajas de 305 m con bobina interna para facilitar el tendido del cable.\\
+			\item Cumple con las normativas de medioambiente CE y RoHS.\\
+		\end{itemize}
+		\item{\bf-Tipo:} Patch Panel\\
+		\item{\bf-Modelo:} Siemon HD5-24 Cat 5e 24 puertos\\\\\\
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=\textwidth]{patchpanel.PNG}
+		\end{figure}
+		\item{\bf-Especificaciones:}
+		\begin{itemize}
+			\item Estándares de red: IEEE 802.3, IEEE 802.3ab, IEEE 802.3u\\
+			\item Tecnología de cableado: 10/100/1000Base-T(X)\\
+			\item Características de red: LAN\\
+			\item Color del producto: Negro\\
+			\item Materiales: Metal\\
+			\item Montaje en rack: 1U\\
+		\end{itemize}
+	\end{itemize}"
+	\section{Información de los dispositivos}
+		Para esta actividad abrimos un terminal y ejecutamos el comando ``ifconfig'' y se desplegó lo siguiente:\\
+		\begin{figure}[h]
+    		\centering
+    	\includegraphics[width=\textwidth]{blodos.PNG}
+		\end{figure}
+		Si observamos la imagen lo que está encerrado en un rectángulo rojo representa la MAC del equipo y lo encerrado en un
+		rectángulo morado representa la IP del mismo.
+	\section{Diagrama de red}
+		\includegraphics[width=\textwidth]{paint.png}
+		Como se observa en el diagrama de red, los computadores están conectados por un cable de red uno por uno con el patch                 panel, el cual hará que los cables se sitúen con una mejor distribución física en el espacio.\\
+                Gracias a esta descripción se plantea que la topología utilizada en el laboratorio de informática es de tipo estrella                 puesto que todos los ordenadores están conectados a un nodo central. Este sistema es muy costoso siendo comparado                     junto con las topologías de tipo anillo o tren, ya que para poder conectar cada dispositivo al switch se necesita un                  cable nuevo de el mismo tamaño, pero al mismo tiempo aporta una característica muy importante la cual es una fácil                    detección de problemas y si es que algún cable de red se llegara a romper o a tener problemas solo perderá la conexión                 ese dispositivo. Aun así si es que el switch se llega a dañar de alguna forma esto afectaría al sistema completo ya                   que solo depende de éste.
+
+\chapter{Conclusión}
+                Gracias a esta experiencia en el laboratorio hemos logrado comprender como funciona un sistema de redes completo 
+                incluyendo sus principales componentes, como los cables de red, el patch panel y el switch, la forma en la cual son 
+                conectados estos mismos y las topologías que se podrían haber implementado en la configuración de las conexiones. La 
+                topología que se está utilizando en el laboratorio de informática es la que según los integrantes del grupo, es la que
+                se adecua a las necesidades existentes, aunque esta requiera de un presupuesto más alto. Además se genera un ``orden lógico'' entre los dispositivos de redes al poseer en la sala solamente equipos de un mismo modelo.
+\begin{thebibliography}{x}
+
+\bibitem{mac} \textsc{Mac Vendors},
+\textit{http://www.macvendors.com/}
+
+\bibitem{hp} \textsc{HP},
+\textit{http://www8.hp.com/cl/es/products/desktops/product-detail.html?oid=7485168}
+
+\bibitem{cisco} \textsc{Cisco},
+\textit{http://www.cisco.com/c/en/us/support/switches/catalyst-2960-24tt-l-switch/model.html}
+
+\bibitem{blueline} \textsc{Blue Line},
+\textit{http://www.blue-line.es/index.php/cobre/cat5-utp/9-cat5eutpcable.html}
+
+\end{thebibliography}
+\end{document}
+Contact GitHub 
